@@ -1,7 +1,7 @@
 import{a as y,S as d,i}from"./assets/vendor-CrlV4O_2.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const r of e)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function a(e){const r={};return e.integrity&&(r.integrity=e.integrity),e.referrerPolicy&&(r.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?r.credentials="include":e.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(e){if(e.ep)return;e.ep=!0;const r=a(e);fetch(e.href,r)}})();const m="50800171-f0005a0681d5ee847775b056c",g="https://pixabay.com/api/";async function h(s){const t={key:m,q:s,image_type:"photo",orientation:"horizontal",safesearch:!0};return y.get(g,{params:t}).then(a=>{if(a.data.hits.length===0)throw new Error("Sorry, there are no images matching your search query. Please try again!");return a.data})}const c=document.querySelector(".gallery"),l=document.querySelector(".loader"),b=new d(".gallery a",{captionsData:"alt",captionDelay:250});function L(s){const t=s.map(({webformatURL:a,largeImageURL:n,tags:e,likes:r,views:o,comments:f,downloads:p})=>`
       <li class="gallery-item">
         <a class="gallery-link" href="${n}">
-          <img src="${a}" alt="${e}" loading="lazy" />
+          <img src="${a}" alt="${e}" loading="lazy" class="image"/>
         </a>
         <div class="info">
           <p class="info-item"><b>Likes</b><span> ${r}</span></p>
