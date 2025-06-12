@@ -35,9 +35,9 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loader.classList.add('visible');
+    loader.style.display = "block";
 }
 
 export function hideLoader() {
-  loader.classList.remove('visible');
+   loader.style.display = "none";
 }

@@ -9,9 +9,14 @@ export async function getImagesByQuery(query) {
     q: query,
     image_type: 'photo',
     orientation: 'horizontal',
-    safesearch: true,
+    safesearch: true
   };
 
-  const response = await axios.get(BASE_URL, { params });
-  return response.data;
+  return axios.get(BASE_URL, { params })
+    .then(response => {
+      if (response.data.hits.length === 0) {
+        throw new Error('Sorry, there are no images matching your search query. Please try again!');
+      }
+      return response.data; 
+    });
 }
