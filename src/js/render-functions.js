@@ -14,7 +14,7 @@ export function createGallery(images) {
     .map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
       <li class="gallery-item">
         <a class="gallery-link" href="${largeImageURL}">
-          <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+          <img src="${webformatURL}" alt="${tags}" loading="lazy" class="image"/>
         </a>
         <div class="info">
           <p class="info-item"><b>Likes</b><span> ${likes}</span></p>
